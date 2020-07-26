@@ -4,10 +4,13 @@ import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import { UiContext } from "../context/UiContext";
 
 export default function SwitchModeToggle() {
-  const { mode, setMode } = useContext(UiContext);
+  const { mode, setMode, setSelectedProjects } = useContext(UiContext);
 
   const handleAlignment = (event, newMode) => {
     setMode(newMode);
+    if (newMode === "work") {
+      setSelectedProjects([]);
+    }
   };
 
   return (

@@ -9,6 +9,8 @@ const UiContextProvider = ({ children }) => {
   const [editingCustomer, setEditingCustomer] = useState(false);
   const [selectedCustomer, setSelectedCustomer] = useState("");
 
+  const [selectedProjects, setSelectedProjects] = useState([]);
+
   const [accordionExpanded, setAccordionExpanded] = useState(false);
 
   const closeModal = () => {
@@ -22,12 +24,14 @@ const UiContextProvider = ({ children }) => {
     selectedCustomer,
     accordionExpanded,
     mode,
+    selectedProjects,
     setCreatingCustomer,
     setEditingCustomer,
     setSelectedCustomer,
     closeModal,
     setAccordionExpanded,
     setMode,
+    setSelectedProjects,
   };
   return (
     <UiContext.Provider value={defaultContext}>{children}</UiContext.Provider>

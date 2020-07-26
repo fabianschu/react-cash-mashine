@@ -51,9 +51,33 @@ const Table = (props) => {
   const { useState } = React;
   const customerId = 2;
   const { setProjects } = useContext(CustomersContext);
-  const { mode } = useContext(UiContext);
+  const { mode, selectedProjects, setSelectedProjects } = useContext(UiContext);
 
-  const { rows } = props;
+  let { rows } = props;
+
+  rows = rows.map((row) => {
+    if (
+      selectedProjects
+        .map((selectedProject) => selectedProject.id)
+        .includes(row.id)
+    ) {
+      return {
+        ...row,
+        tableData: {
+          ...row.tableData,
+          checked: true,
+        },
+      };
+    }
+    return {
+      ...row,
+      tableData: {
+        ...row.tableData,
+        checked: false,
+      },
+    };
+  });
+
   const [columns, setColumns] = useState([
     { title: "Projekt", field: "name", width: 200 },
     {
@@ -92,6 +116,7 @@ const Table = (props) => {
           },
           selection: mode === "cash" ? true : false,
         }}
+        onSelectionChange={(rows) => setSelectedProjects(rows)}
         title="Projekte"
         columns={columns}
         data={rows}
@@ -125,7 +150,6 @@ const Table = (props) => {
             }
           },
           onRowDelete: async (oldData) => {
-            console.log("delete!");
             try {
               await axios.delete(
                 `http://localhost:5000/customers/${customerId}/projects/${oldData.id}`

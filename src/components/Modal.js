@@ -55,7 +55,6 @@ const Modal = (props) => {
   };
 
   const getInitialValues = () => {
-    console.log(selectedCustomer);
     if (editingCustomer) {
       return selectedCustomer;
     }
