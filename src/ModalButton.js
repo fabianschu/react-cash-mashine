@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AddIcon from "@material-ui/icons/Add";
+import EditIcon from "@material-ui/icons/Edit";
 import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles((theme) => ({
@@ -14,9 +15,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CreateButton = (props) => {
-  const { disabled, handleClick, currentState } = props;
+const ModalButton = (props) => {
+  const { disabled, handleClick, currentState, type } = props;
   const classes = useStyles();
+
+  const renderIcon = () => {
+    switch (type) {
+      case "create":
+        return <AddIcon />;
+      case "edit":
+        return <EditIcon />;
+    }
+  };
 
   return (
     <IconButton
@@ -27,9 +37,9 @@ const CreateButton = (props) => {
       disabled={disabled}
       onClick={() => handleClick(!currentState)}
     >
-      <AddIcon />
+      {renderIcon()}
     </IconButton>
   );
 };
 
-export default CreateButton;
+export default ModalButton;

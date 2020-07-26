@@ -9,13 +9,6 @@ import Table from "./Table";
 import { UiContext } from "./context/UiContext";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    // maxWidth: "80%",
-    // minWidth: "740px",
-    // width: "90%",
-    // borderRadius: "0px",
-    // marginBottom: "30px",
-  },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     flexBasis: "33.33%",
@@ -24,9 +17,6 @@ const useStyles = makeStyles((theme) => ({
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
-  },
-  container: {
-    // marginBottom: "40px",
   },
   swoot: {},
 }));
@@ -43,11 +33,10 @@ export default function ControlledAccordions(props) {
 
   console.log(accordionExpanded);
   return (
-    <div className={classes.container}>
+    <div>
       <Accordion
         expanded={accordionExpanded}
         onChange={handleChange(true)}
-        classes={{ root: classes.root }}
         elevation={0}
         square
         disabled={disabled}
