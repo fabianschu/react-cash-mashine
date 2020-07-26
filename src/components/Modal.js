@@ -25,15 +25,19 @@ const Modal = (props) => {
       return <CustomerForm />;
     }
     if (creatingInvoice) {
-      return null;
+      return <div>hi</div>;
     }
   };
-
+  console.log(creatingInvoice);
+  console.log(creatingCustomer);
+  console.log(editingCustomer);
   return (
     <div>
       <Dialog
         fullScreen={fullScreen}
-        open={creatingCustomer || editingCustomer}
+        maxWidth={"md"}
+        fullWidth={true}
+        open={creatingCustomer || editingCustomer || creatingInvoice}
         onClose={closeModal}
         aria-labelledby="responsive-dialog-title"
       >

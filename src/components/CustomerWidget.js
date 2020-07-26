@@ -22,10 +22,12 @@ const CustomerWidget = (props) => {
   const {
     creatingCustomer,
     editingCustomer,
+    creatingInvoice,
     selectedCustomer,
     setCreatingCustomer,
     setSelectedCustomer,
     setEditingCustomer,
+    setCreatingInvoice,
     mode,
     selectedProjects,
   } = useContext(UiContext);
@@ -44,23 +46,23 @@ const CustomerWidget = (props) => {
         />
         {mode === "work" && (
           <ModalButton
-            handleClick={setCreatingCustomer}
-            currentState={creatingCustomer}
-            type="create"
-          />
-        )}
-        {mode === "work" && (
-          <ModalButton
             handleClick={setEditingCustomer}
             currentState={editingCustomer}
             type="edit"
             disabled={!selectedCustomer}
           />
         )}
+        {mode === "work" && (
+          <ModalButton
+            handleClick={setCreatingCustomer}
+            currentState={creatingCustomer}
+            type="create"
+          />
+        )}
         {mode === "cash" && (
           <ModalButton
-            handleClick={setEditingCustomer}
-            currentState={editingCustomer}
+            handleClick={setCreatingInvoice}
+            currentState={creatingInvoice}
             type="print"
             disabled={!selectedCustomer || selectedProjects.length === 0}
           />

@@ -47,11 +47,9 @@ const ModalButton = (props) => {
 
   return (
     <Button
-      // variant="contained"
       color="secondary"
       className={classes.root}
       variant="contained"
-      // size="large"
       disabled={disabled}
       onClick={() => handleClick(!currentState)}
       startIcon={renderIcon()}

@@ -23,11 +23,13 @@ const UiContextProvider = ({ children }) => {
   const defaultContext = {
     creatingCustomer,
     editingCustomer,
+    creatingInvoice,
     selectedCustomer,
     accordionExpanded,
     mode,
     selectedProjects,
     setCreatingCustomer,
+    setCreatingInvoice,
     setEditingCustomer,
     setSelectedCustomer,
     closeModal,
