@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import axios from "axios";
-import CustomerWidget from "../CustomerWidget";
-import Modal from "../Modal";
+import CustomerWidget from "../components/CustomerWidget";
+import Modal from "../components/Modal";
 import { CustomersContext } from "../context/CustomersContext";
 
 const WorkMode = () => {

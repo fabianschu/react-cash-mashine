@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { forwardRef } from "react";
 import axios from "axios";
-import { CustomersContext } from "./context/CustomersContext";
+import { CustomersContext } from "../context/CustomersContext";
 import MaterialTable, { MTableToolbar } from "material-table";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";

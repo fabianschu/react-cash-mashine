@@ -6,7 +6,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Table from "./Table";
-import { UiContext } from "./context/UiContext";
+import { UiContext } from "../context/UiContext";
 
 const useStyles = makeStyles((theme) => ({
   heading: {

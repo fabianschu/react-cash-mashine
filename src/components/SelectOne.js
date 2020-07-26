@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import usePrevious from "./hooks/usePrevious";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
