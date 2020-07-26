@@ -6,7 +6,8 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    width: "80%",
+    flexGrow: 1,
+    maxWidth: "800px",
   },
   selectEmpty: {
     marginTop: theme.spacing(2),

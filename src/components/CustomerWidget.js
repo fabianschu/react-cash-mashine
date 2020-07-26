@@ -11,9 +11,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     padding: "20px",
     display: "flex",
+    flexWrap: "wrap",
     alignItems: "center",
     backgroundColor: "white",
-    minWidth: "700px",
+    // minWidth: "700px",
   },
 }));
 
