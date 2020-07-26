@@ -93,11 +93,17 @@ const Table = (props) => {
         />
       ),
     },
-
     {
       title: "Stunden",
       field: "hours",
       type: "numeric",
+      width: 100,
+    },
+    {
+      title: "Zuletzt bearbeitet",
+      field: "updatedAt",
+      type: "date",
+      defaultSort: "desc",
       width: 100,
     },
   ]);
