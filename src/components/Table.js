@@ -23,15 +23,19 @@ import { UiContext } from "../context/UiContext";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => (
-    <AddCircleIcon {...props} ref={ref} color="primary" />
+    <AddCircleIcon {...props} ref={ref} color="secondary" />
   )),
   Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
   Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-  Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
+  Delete: forwardRef((props, ref) => (
+    <DeleteOutline {...props} ref={ref} color="secondary" />
+  )),
   DetailPanel: forwardRef((props, ref) => (
     <ChevronRight {...props} ref={ref} />
   )),
-  Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
+  Edit: forwardRef((props, ref) => (
+    <Edit {...props} ref={ref} color="secondary" />
+  )),
   Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
   Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
   FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
@@ -114,9 +118,9 @@ const Table = (props) => {
         icons={tableIcons}
         options={{
           actionsColumnIndex: -1,
-          actionsCellStyle: {
-            color: "#FF00dd",
-          },
+          // actionsCellStyle: {
+          //   color: "#FF00dd",
+          // },
           headerStyle: {
             width: "1000px",
           },
