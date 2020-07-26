@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
 import IconButton from "@material-ui/core/IconButton";
+import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -25,6 +26,8 @@ const ModalButton = (props) => {
         return <AddIcon />;
       case "edit":
         return <EditIcon />;
+      case "print":
+        return <PictureAsPdfIcon />;
     }
   };
 

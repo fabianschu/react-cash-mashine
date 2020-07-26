@@ -26,6 +26,7 @@ const CustomerWidget = (props) => {
     setSelectedCustomer,
     setEditingCustomer,
     mode,
+    selectedProjects,
   } = useContext(UiContext);
   const { customers, projects } = useContext(CustomersContext);
   const classes = useStyles();
@@ -53,6 +54,14 @@ const CustomerWidget = (props) => {
             currentState={editingCustomer}
             type="edit"
             disabled={!selectedCustomer}
+          />
+        )}
+        {mode === "cash" && (
+          <ModalButton
+            handleClick={setEditingCustomer}
+            currentState={editingCustomer}
+            type="print"
+            disabled={!selectedCustomer || selectedProjects.length === 0}
           />
         )}
       </Box>
