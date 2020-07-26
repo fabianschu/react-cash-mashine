@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { forwardRef } from "react";
 import axios from "axios";
 import { CustomersContext } from "../context/CustomersContext";
-import MaterialTable, { MTableToolbar } from "material-table";
+import MaterialTable from "material-table";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
@@ -19,6 +19,7 @@ import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import TextField from "@material-ui/core/TextField";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import { UiContext } from "../context/UiContext";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => (
@@ -50,6 +51,7 @@ const Table = (props) => {
   const { useState } = React;
   const customerId = 2;
   const { setProjects } = useContext(CustomersContext);
+  const { mode } = useContext(UiContext);
 
   const { rows } = props;
   const [columns, setColumns] = useState([
@@ -76,9 +78,6 @@ const Table = (props) => {
     },
   ]);
 
-  const renderIcon = () => <AddCircleIcon />;
-
-  // console.log(selectedCustomer);
   return (
     <div style={{ width: "100%" }}>
       <MaterialTable
@@ -91,6 +90,7 @@ const Table = (props) => {
           headerStyle: {
             width: "1000px",
           },
+          selection: mode === "cash" ? true : false,
         }}
         title="Projekte"
         columns={columns}
@@ -139,9 +139,6 @@ const Table = (props) => {
             }
           },
         }}
-        // components={{
-        //   Action: (props) => <MyAction {...props} />,
-        // }}
       />
     </div>
   );

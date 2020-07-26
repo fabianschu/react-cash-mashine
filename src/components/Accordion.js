@@ -31,7 +31,6 @@ export default function ControlledAccordions(props) {
     setAccordionExpanded(isExpanded ? true : false);
   };
 
-  console.log(accordionExpanded);
   return (
     <div>
       <Accordion

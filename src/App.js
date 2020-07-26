@@ -8,9 +8,11 @@ import {
 import WorkMode from "./pages/WorkMode";
 import Layout from "./pages/Layout";
 import theme from "./theme";
+import SwitchModeToggle from "./components/SwitchModeToggle";
 
 const App = () => (
   <Layout>
+    <SwitchModeToggle />
     <BrowserRouter>
       <Route path="/">
         <WorkMode />

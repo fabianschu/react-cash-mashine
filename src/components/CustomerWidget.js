@@ -25,12 +25,13 @@ const CustomerWidget = (props) => {
     setCreatingCustomer,
     setSelectedCustomer,
     setEditingCustomer,
+    mode,
   } = useContext(UiContext);
   const { customers, projects } = useContext(CustomersContext);
   const classes = useStyles();
 
   return (
-    <>
+    <Box boxShadow={2}>
       <Box className={classes.root}>
         <SelectOne
           options={customers}
@@ -39,24 +40,28 @@ const CustomerWidget = (props) => {
           type="Kunden"
           display="firm"
         />
-        <ModalButton
-          handleClick={setCreatingCustomer}
-          currentState={creatingCustomer}
-          type="create"
-        />
-        <ModalButton
-          handleClick={setEditingCustomer}
-          currentState={editingCustomer}
-          type="edit"
-          disabled={!selectedCustomer}
-        />
+        {mode === "work" && (
+          <ModalButton
+            handleClick={setCreatingCustomer}
+            currentState={creatingCustomer}
+            type="create"
+          />
+        )}
+        {mode === "work" && (
+          <ModalButton
+            handleClick={setEditingCustomer}
+            currentState={editingCustomer}
+            type="edit"
+            disabled={!selectedCustomer}
+          />
+        )}
       </Box>
       <Accordion
         disabled={!selectedCustomer}
         data={projects}
         title={selectedCustomer && selectedCustomer.firm}
       />
-    </>
+    </Box>
   );
 };
 

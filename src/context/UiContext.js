@@ -3,6 +3,8 @@ import React, { createContext, useState, useEffect } from "react";
 const UiContext = createContext();
 
 const UiContextProvider = ({ children }) => {
+  const [mode, setMode] = useState("work");
+
   const [creatingCustomer, setCreatingCustomer] = useState(false);
   const [editingCustomer, setEditingCustomer] = useState(false);
   const [selectedCustomer, setSelectedCustomer] = useState("");
@@ -19,11 +21,13 @@ const UiContextProvider = ({ children }) => {
     editingCustomer,
     selectedCustomer,
     accordionExpanded,
+    mode,
     setCreatingCustomer,
     setEditingCustomer,
     setSelectedCustomer,
     closeModal,
     setAccordionExpanded,
+    setMode,
   };
   return (
     <UiContext.Provider value={defaultContext}>{children}</UiContext.Provider>

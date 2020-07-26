@@ -1,10 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import SwitchModeToggle from "../components/SwitchModeToggle";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
-    paddingTop: "50px",
+    padding: "50px",
     // width: "100vw",
     display: "flex",
     flexDirection: "column",
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Layout = (props) => {
   const classes = useStyles();
-  return <div className={classes.root}>{props.children} </div>;
+  return <div className={classes.root}>{props.children}</div>;
 };
 
 export default Layout;
