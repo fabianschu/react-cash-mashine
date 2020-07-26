@@ -7,8 +7,9 @@ const UiContextProvider = ({ children }) => {
 
   const [creatingCustomer, setCreatingCustomer] = useState(false);
   const [editingCustomer, setEditingCustomer] = useState(false);
-  const [selectedCustomer, setSelectedCustomer] = useState("");
+  const [creatingInvoice, setCreatingInvoice] = useState(false);
 
+  const [selectedCustomer, setSelectedCustomer] = useState("");
   const [selectedProjects, setSelectedProjects] = useState([]);
 
   const [accordionExpanded, setAccordionExpanded] = useState(false);
@@ -16,6 +17,7 @@ const UiContextProvider = ({ children }) => {
   const closeModal = () => {
     setCreatingCustomer(false);
     setEditingCustomer(false);
+    setCreatingInvoice(false);
   };
 
   const defaultContext = {
