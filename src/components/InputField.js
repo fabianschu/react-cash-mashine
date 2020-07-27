@@ -1,19 +1,12 @@
 import React from "react";
-import { Field, useField, useFormikContext } from "formik";
-import { makeStyles } from "@material-ui/core/styles";
+import { useField } from "formik";
 import TextField from "@material-ui/core/TextField";
-
-const useStyles = makeStyles((theme) => ({
-  root: {},
-}));
 
 const InputField = (props) => {
   const { name } = props.field;
   const [field, meta, helpers] = useField(name);
-  const { values } = useFormikContext();
   const { setValue } = helpers;
   const { value } = field;
-  const classes = useStyles();
 
   const getLabel = () => {
     if (name === "firm") return "Firma";

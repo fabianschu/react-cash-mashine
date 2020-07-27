@@ -31,6 +31,8 @@ const ModalButton = (props) => {
         return <EditIcon />;
       case "print":
         return <PictureAsPdfIcon />;
+      default:
+        return null;
     }
   };
 
@@ -42,6 +44,8 @@ const ModalButton = (props) => {
         return "Bearbeiten";
       case "print":
         return "Rechnung";
+      default:
+        return null;
     }
   };
 

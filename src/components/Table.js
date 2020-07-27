@@ -82,7 +82,7 @@ const Table = (props) => {
     };
   });
 
-  const [columns, setColumns] = useState([
+  const [columns] = useState([
     { title: "Projekt", field: "name", width: 200 },
     {
       title: "Beschreibung",
@@ -118,9 +118,6 @@ const Table = (props) => {
         icons={tableIcons}
         options={{
           actionsColumnIndex: -1,
-          // actionsCellStyle: {
-          //   color: "#FF00dd",
-          // },
           headerStyle: {
             width: "1000px",
           },

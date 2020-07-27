@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import SwitchModeToggle from "../components/SwitchModeToggle";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 
@@ -13,11 +12,8 @@ const useStyles = makeStyles((theme) => ({
       }
       return "50px";
     },
-    // width: "100vw",
     display: "flex",
     flexDirection: "column",
-    // alignItems: "center",
-    // justifyContent: "center",
     backgroundImage:
       "linear-gradient(to right top, #f7f7f7, #eff3fa, #dff0fc, #cceff8, #bceeec)",
   },

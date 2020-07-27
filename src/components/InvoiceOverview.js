@@ -3,25 +3,12 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { UiContext } from "../context/UiContext";
-import { CustomersContext } from "../context/CustomersContext";
-import { useTheme } from "@material-ui/core/styles";
 
 const InvoiceOverview = () => {
-  const theme = useTheme();
   const { closeModal, selectedCustomer } = useContext(UiContext);
-  const {
-    firm,
-    street,
-    zip,
-    city,
-    country,
-    firstName,
-    lastName,
-    hourlyRate,
-  } = selectedCustomer;
+  const { firm, street, zip, city, country } = selectedCustomer;
 
   return (
     <>

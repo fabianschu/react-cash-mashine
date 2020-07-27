@@ -21,7 +21,7 @@ const CustomersContextProvider = ({ children }) => {
         setAccordionExpanded(true);
       })
       .catch((e) => console.log(e));
-  }, [selectedCustomer]);
+  }, [selectedCustomer, setAccordionExpanded]);
 
   const defaultContext = {
     customers,

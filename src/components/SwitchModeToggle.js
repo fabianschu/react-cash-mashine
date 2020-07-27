@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import { UiContext } from "../context/UiContext";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import white from "./white.png";
 
 const StyledToggleButton = withStyles((theme) => ({
@@ -23,7 +23,6 @@ const StyledToggleButtonGroup = withStyles((theme) => ({
 
 export default function SwitchModeToggle() {
   const { mode, setMode, setSelectedProjects } = useContext(UiContext);
-  // const classes = useStyles(mode);
 
   const handleAlignment = (event, newMode) => {
     if (newMode !== null) {
