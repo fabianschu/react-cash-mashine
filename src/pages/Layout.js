@@ -1,11 +1,18 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import SwitchModeToggle from "../components/SwitchModeToggle";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
-    padding: "50px",
+    padding: (mobile) => {
+      if (mobile) {
+        return "0";
+      }
+      return "50px";
+    },
     // width: "100vw",
     display: "flex",
     flexDirection: "column",
@@ -17,7 +24,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Layout = (props) => {
-  const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(useMediaQuery(theme.breakpoints.down("sm")));
+
   return <div className={classes.root}>{props.children}</div>;
 };
 

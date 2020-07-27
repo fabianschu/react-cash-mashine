@@ -2,30 +2,49 @@ import React, { useContext } from "react";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import { UiContext } from "../context/UiContext";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
+import white from "./white.png";
+
+const StyledToggleButton = withStyles((theme) => ({
+  root: {
+    border: "none",
+    borderRadius: 0,
+  },
+  selected: {
+    backgroundImage: `url('${white}')`,
+  },
+}))(ToggleButton);
+
+const StyledToggleButtonGroup = withStyles((theme) => ({
+  root: {
+    borderRadius: 0,
+  },
+}))(ToggleButtonGroup);
 
 export default function SwitchModeToggle() {
   const { mode, setMode, setSelectedProjects } = useContext(UiContext);
+  // const classes = useStyles(mode);
 
   const handleAlignment = (event, newMode) => {
-    setMode(newMode);
+    if (newMode !== null) {
+      setMode(newMode);
+    }
     if (newMode === "work") {
       setSelectedProjects([]);
     }
   };
 
   return (
-    <ToggleButtonGroup
+    <StyledToggleButtonGroup
       value={mode}
       exclusive
       onChange={handleAlignment}
-      aria-label="text alignment"
+      aria-label="mode"
     >
-      <ToggleButton value="work" aria-label="left aligned">
+      <StyledToggleButton value="work" component="div">
         Work Mode
-      </ToggleButton>
-      <ToggleButton value="cash" aria-label="centered">
-        Cash Mode
-      </ToggleButton>
-    </ToggleButtonGroup>
+      </StyledToggleButton>
+      <StyledToggleButton value="cash">Cash Mode</StyledToggleButton>
+    </StyledToggleButtonGroup>
   );
 }

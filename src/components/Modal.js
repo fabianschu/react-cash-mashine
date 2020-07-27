@@ -9,6 +9,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import { UiContext } from "../context/UiContext";
 import CustomerForm from "./CustomerForm";
+import InvoiceOverview from "./InvoiceOverview";
 
 const Modal = (props) => {
   const theme = useTheme();
@@ -25,7 +26,7 @@ const Modal = (props) => {
       return <CustomerForm />;
     }
     if (creatingInvoice) {
-      return <div>hi</div>;
+      return <InvoiceOverview />;
     }
   };
   console.log(creatingInvoice);

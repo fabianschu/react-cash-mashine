@@ -35,7 +35,7 @@ const CustomerWidget = (props) => {
   const classes = useStyles();
 
   return (
-    <Box boxShadow={2}>
+    <Box>
       <Box className={classes.root}>
         <SelectOne
           options={customers}
