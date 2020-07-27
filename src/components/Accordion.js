@@ -41,7 +41,7 @@ export default function ControlledAccordions(props) {
         disabled={disabled}
       >
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon color="secondary" />}
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
