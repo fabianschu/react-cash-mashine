@@ -20,6 +20,7 @@ import ViewColumn from "@material-ui/icons/ViewColumn";
 import TextField from "@material-ui/core/TextField";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import { UiContext } from "../context/UiContext";
+import Paper from "@material-ui/core/Paper";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => (
@@ -125,6 +126,9 @@ const Table = (props) => {
         }}
         onSelectionChange={(rows) => setSelectedProjects(rows)}
         title="Projekte"
+        components={{
+          Container: (props) => <Paper {...props} elevation={2} />,
+        }}
         columns={columns}
         data={rows}
         editable={{
