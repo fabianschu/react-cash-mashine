@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 const UiContext = createContext();
 
@@ -13,6 +13,10 @@ const UiContextProvider = ({ children }) => {
   const [selectedProjects, setSelectedProjects] = useState([]);
 
   const [accordionExpanded, setAccordionExpanded] = useState(false);
+
+  useEffect(() => {
+    setSelectedProjects([]);
+  }, [selectedCustomer]);
 
   const closeModal = () => {
     setCreatingCustomer(false);
