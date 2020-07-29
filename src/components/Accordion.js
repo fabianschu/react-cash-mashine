@@ -75,6 +75,12 @@ export default function ControlledAccordions(props) {
               justifyContent="space-between"
               className={classes.wrapBox}
             >
+              <ModalButton
+                handleClick={setEditingCustomer}
+                currentState={editingCustomer}
+                type="edit"
+                disabled={!selectedCustomer}
+              />
               <Box>
                 <Box>
                   <Box>{selectedCustomer.firm}</Box>
@@ -93,12 +99,6 @@ export default function ControlledAccordions(props) {
                   Stundensatz: <span>€{selectedCustomer.hourlyRate}</span>
                 </Box>
               </Box>
-              <ModalButton
-                handleClick={setEditingCustomer}
-                currentState={editingCustomer}
-                type="edit"
-                disabled={!selectedCustomer}
-              />
             </Box>
           )}
 

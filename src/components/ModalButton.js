@@ -62,7 +62,7 @@ const ModalButton = (props) => {
   };
 
   const renderMargin = () => {
-    if (type === "print") return 0;
+    if (type === "print" || type === "edit") return 0;
     return 2;
   };
 

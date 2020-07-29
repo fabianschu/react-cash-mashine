@@ -35,6 +35,11 @@ const CustomerWidget = (props) => {
     <Box>
       <Box className={classes.outer}>
         <Box className={classes.inner}>
+          <ModalButton
+            handleClick={setCreatingCustomer}
+            currentState={creatingCustomer}
+            type="create"
+          />
           <SelectOne
             options={customers}
             handleSelection={setSelectedCustomer}
@@ -42,21 +47,6 @@ const CustomerWidget = (props) => {
             type="Kunden"
             display="firm"
           />
-          {mode === "work" && (
-            <ModalButton
-              handleClick={setCreatingCustomer}
-              currentState={creatingCustomer}
-              type="create"
-            />
-          )}
-          {/* {mode === "work" && (
-          <ModalButton
-            handleClick={setCreatingInvoice}
-            currentState={creatingInvoice}
-            type="print"
-            disabled={!selectedCustomer || selectedProjects.length === 0}
-          />
-        )} */}
         </Box>
       </Box>
       <Accordion
