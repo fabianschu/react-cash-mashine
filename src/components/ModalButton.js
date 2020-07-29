@@ -4,10 +4,11 @@ import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
 import Button from "@material-ui/core/Button";
 import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: theme.spacing(2),
+    // margin: theme.spacing(2),
     width: "140px",
     display: "flex",
     justifyContent: "flex-start",
@@ -49,17 +50,38 @@ const ModalButton = (props) => {
     }
   };
 
+  const renderBackgroundColor = () => {
+    switch (type) {
+      case "create":
+        return "primary";
+      case "print":
+        return "secondary";
+      default:
+        return "white";
+    }
+  };
+
+  const renderMargin = () => {
+    if (type === "print") return 0;
+    return 2;
+  };
+
   return (
-    <Button
-      color="secondary"
-      className={classes.root}
-      variant="contained"
-      disabled={disabled}
-      onClick={() => handleClick(!currentState)}
-      startIcon={renderIcon()}
-    >
-      {renderCaption()}
-    </Button>
+    <Box m={renderMargin()} mt={2}>
+      <Button
+        color={renderBackgroundColor()}
+        className={classes.root}
+        variant="contained"
+        disabled={disabled}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleClick(!currentState);
+        }}
+        startIcon={renderIcon()}
+      >
+        {renderCaption()}
+      </Button>
+    </Box>
   );
 };
 

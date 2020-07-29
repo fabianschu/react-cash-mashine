@@ -122,7 +122,7 @@ const Table = (props) => {
           headerStyle: {
             width: "1000px",
           },
-          selection: mode === "cash" ? true : false,
+          selection: true,
         }}
         onSelectionChange={(rows) => setSelectedProjects(rows)}
         title="Projekte"

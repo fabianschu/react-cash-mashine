@@ -8,65 +8,56 @@ import SelectOne from "./SelectOne";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  outer: {
     padding: "20px",
+    backgroundColor: "white",
+  },
+  inner: {
     display: "flex",
+    justifyContent: "space-between",
     flexWrap: "wrap",
     alignItems: "center",
-    backgroundColor: "white",
-    // minWidth: "700px",
   },
 }));
 
 const CustomerWidget = (props) => {
   const {
     creatingCustomer,
-    editingCustomer,
-    creatingInvoice,
     selectedCustomer,
     setCreatingCustomer,
     setSelectedCustomer,
-    setEditingCustomer,
-    setCreatingInvoice,
     mode,
-    selectedProjects,
   } = useContext(UiContext);
   const { customers, projects } = useContext(CustomersContext);
   const classes = useStyles();
 
   return (
     <Box>
-      <Box className={classes.root}>
-        <SelectOne
-          options={customers}
-          handleSelection={setSelectedCustomer}
-          selected={selectedCustomer}
-          type="Kunden"
-          display="firm"
-        />
-        {mode === "work" && (
-          <ModalButton
-            handleClick={setEditingCustomer}
-            currentState={editingCustomer}
-            type="edit"
-            disabled={!selectedCustomer}
+      <Box className={classes.outer}>
+        <Box className={classes.inner}>
+          <SelectOne
+            options={customers}
+            handleSelection={setSelectedCustomer}
+            selected={selectedCustomer}
+            type="Kunden"
+            display="firm"
           />
-        )}
-        {mode === "work" && (
-          <ModalButton
-            handleClick={setCreatingCustomer}
-            currentState={creatingCustomer}
-            type="create"
-          />
-        )}
-        {mode === "cash" && (
+          {mode === "work" && (
+            <ModalButton
+              handleClick={setCreatingCustomer}
+              currentState={creatingCustomer}
+              type="create"
+            />
+          )}
+          {/* {mode === "work" && (
           <ModalButton
             handleClick={setCreatingInvoice}
             currentState={creatingInvoice}
             type="print"
             disabled={!selectedCustomer || selectedProjects.length === 0}
           />
-        )}
+        )} */}
+        </Box>
       </Box>
       <Accordion
         disabled={!selectedCustomer}

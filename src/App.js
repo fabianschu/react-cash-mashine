@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <Layout>
-      <SwitchModeToggle />
+      {/* <SwitchModeToggle /> */}
       <BrowserRouter>
         <Route path="/">
           {customers && <CustomerWidget />}
