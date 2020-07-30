@@ -57,7 +57,7 @@ const ModalButton = (props) => {
       case "print":
         return "secondary";
       default:
-        return "white";
+        return "default";
     }
   };
 

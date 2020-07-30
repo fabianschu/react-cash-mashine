@@ -60,6 +60,12 @@ const InvoiceOverview = () => {
 
   const { totalHours, totalPrice } = getTotal();
 
+  const invoiceTemplate = {
+    customer: { ...selectedCustomer },
+    positions: [...selectedProjects],
+    total: getTotal(),
+  };
+
   return (
     <>
       <DialogTitle id="responsive-dialog-title">Rechnung erstellen</DialogTitle>
@@ -145,7 +151,10 @@ const InvoiceOverview = () => {
           type="submit"
           // onClick={handleSubmit(props.values)}
         >
-          <PDFDownloadLink document={<Invoice />} fileName="somename.pdf">
+          <PDFDownloadLink
+            document={<Invoice template={invoiceTemplate} />}
+            fileName="somename.pdf"
+          >
             {({ blob, url, loading, error }) =>
               loading ? "Loading document..." : "Download PDF"
             }
