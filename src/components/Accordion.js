@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "20px",
   },
   wrapBox: {
-    width: "100%",
+    width: "90%",
   },
 }));
 

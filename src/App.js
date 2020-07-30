@@ -26,15 +26,15 @@ const App = () => {
   }, []);
 
   return (
-    <Layout>
-      {/* <SwitchModeToggle /> */}
-      <BrowserRouter>
-        <Route path="/">
+    <BrowserRouter>
+      <Layout>
+        {/* <SwitchModeToggle /> */}
+        <Route exact path="/">
           {customers && <CustomerWidget />}
           <Modal />
         </Route>
-      </BrowserRouter>
-    </Layout>
+      </Layout>
+    </BrowserRouter>
   );
 };
 
