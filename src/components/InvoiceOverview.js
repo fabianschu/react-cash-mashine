@@ -14,6 +14,8 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { Typography } from "@material-ui/core";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import Invoice from "./Invoice";
 
 const useStyles = makeStyles({
   table: {
@@ -143,7 +145,11 @@ const InvoiceOverview = () => {
           type="submit"
           // onClick={handleSubmit(props.values)}
         >
-          PDF
+          <PDFDownloadLink document={<Invoice />} fileName="somename.pdf">
+            {({ blob, url, loading, error }) =>
+              loading ? "Loading document..." : "Download PDF"
+            }
+          </PDFDownloadLink>
         </Button>
       </DialogActions>
     </>

@@ -1,29 +1,17 @@
-import React from "react";
-import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
+import React, { useContext } from "react";
+import {
+  PDFDownloadLink,
+  Document,
+  Page,
+  View,
+  Text,
+} from "@react-pdf/renderer";
 
-// Create styles
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: "row",
-    backgroundColor: "#E4E4E4",
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
-    height: "100vh",
-  },
-});
-
-// Create Document Component
 const Invoice = () => (
   <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.section}>
-        <Text>Section #1</Text>
-      </View>
-      <View style={styles.section}>
-        <Text>Section #2</Text>
+    <Page>
+      <View>
+        <Text>hihihihi</Text>
       </View>
     </Page>
   </Document>
