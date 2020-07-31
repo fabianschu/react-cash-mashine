@@ -14,6 +14,7 @@ const COLN_WIDTH = (100 - COL1_WIDTH) / 3;
 const styles = {
   body: {
     padding: 10,
+    backgroundColor: "red",
   },
   table: {
     display: "table",
@@ -94,7 +95,7 @@ const Invoice = ({ template }) => {
           <View style={styles.table}>
             <View style={styles.tableRow}>
               <View style={styles.tableCol1Header}>
-                <Text style={styles.tableCellHeader}>Project</Text>
+                <Text style={styles.tableCellHeader}>Projekt</Text>
               </View>
               <View style={styles.tableColHeader}>
                 <Text style={styles.tableCellHeader}>Beschreibung</Text>
@@ -113,15 +114,15 @@ const Invoice = ({ template }) => {
                     <Text style={styles.tableCell}>{position.name}</Text>
                   </View>
                   <View style={styles.tableCol}>
-                    <Text style={styles.tableCell}>3</Text>
+                    <Text style={styles.tableCell}>{position.description}</Text>
+                  </View>
+                  <View style={styles.tableCol}>
+                    <Text style={styles.tableCell}>{position.hours}</Text>
                   </View>
                   <View style={styles.tableCol}>
                     <Text style={styles.tableCell}>
-                      2019-02-20 - 2020-02-19
+                      {position.hours * customer.hourlyRate}
                     </Text>
-                  </View>
-                  <View style={styles.tableCol}>
-                    <Text style={styles.tableCell}>5€</Text>
                   </View>
                 </View>
               );
