@@ -16,14 +16,14 @@ import Modal from "./components/Modal";
 const App = () => {
   const { customers, setCustomers } = useContext(CustomersContext);
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:5000/customers")
-  //     .then((customers) => {
-  //       setCustomers(customers.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/customers")
+      .then((customers) => {
+        setCustomers(customers.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <BrowserRouter>
