@@ -24,6 +24,10 @@ const useStyles = makeStyles({
   column: {
     fontWeight: "bold",
   },
+  pdfLink: {
+    color: "white",
+    textDecoration: "none",
+  },
 });
 
 const InvoiceOverview = () => {
@@ -154,6 +158,7 @@ const InvoiceOverview = () => {
           <PDFDownloadLink
             document={<Invoice template={invoiceTemplate} />}
             fileName="somename.pdf"
+            className={classes.pdfLink}
           >
             {({ blob, url, loading, error }) =>
               loading ? "Loading document..." : "Download PDF"
